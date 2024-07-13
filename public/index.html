@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoPeFolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1d1b26;
+            color: #2272FF;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 70px;
+            background-color: #2272FF;
+            position:fixed;
+            width:100%;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul{
+            display: flex;
+            justify-content:center;
+        }
+        nav ul li{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 25px;
+            font-size: larger;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+        nav ul li a:hover{
+            color: rgb(15, 15, 16);
+            /* font-size: 1.3rem; */
+        }
+        /* left of navbar: increasing size of text */
+        .left{
+            font-size: 3rem;
+            color: white;
+        }
+
+        /* responsive navbar */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                align-items: center;
+                width: 100%;
+                height: 100vh;
+                position:fixed;
+                top: 70px;
+                left: -100%;
+                transition: left 0.3s ease;
+                flex-direction: column;
+                background-color: #0e0f0f;
+                opacity: 0.9;  
+            }
+            .left{
+            font-size: 30px; 
+            margin-bottom: 10px; 
+            margin-left: -50%;
+            }
+            nav ul li {
+                margin: 20px 0;
+            }
+
+            /* .left {
+                display: none;
+            } */
+
+    /* Hamburger menu */
+            .hamburger {
+                display: flex;
+                cursor: pointer;
+                position: absolute;
+                right: 40px;
+                top: 20px;
+            }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background-color: aliceblue;
+                margin: 5px 0;
+                transition: 0.4s;
+            }
+
+    /* Hamburger menu functionality */
+            .hamburger:hover div {
+                background-color: rgb(227, 227, 238);
+            }
+
+    /* Hamburger menu click functionality */
+            .hamburger.active ul {
+                left: 0;
+            }
+        }
+        /* in main first section */
+        .first{
+            display: flex;
+            justify-content: space-around;
+            margin: 80px 37px;
+            margin-top: 150px;
+            z-index: 10;
+        }
+        .leftsection{
+            width: 50%;
+            font-size: 5rem;
+            margin: 20px 30px;
+            z-index: 10;
+            margin-top: 1%;
+        }
+        .rightsection{
+            z-index: 10;
+            margin-top: 4%;
+        }
+        .github-button .btn{
+            border-radius:10px;
+            background-color: #1d1b26;
+            color: white;
+        }
+        .github-button .btn:nth-child(2){
+            background-color: white;
+            color: black;
+        }
+        .rightsection img{
+            width: 75%;
+            height: 75%;
+            border-radius:50%;
+            margin-right:-450px;
+            object-fit:cover;
+            object-position: 10% 60%;
+            z-index: 10;
+            /* box-shadow: inset 0 0 10px rgb(138, 138, 181), 0 0 10px rgb(138, 138, 181);
+            border: 2px solid rgb(138, 138, 181); */
+        }
+        .wordcolor{
+            color: white;
+        }
+        #element{
+            color: white;
+
+        }
+        /* Responsive Home Page */
+        @media screen and (max-width: 768px) {
+            .first {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Center items horizontally */
+            }
+
+            .rightsection img {
+                width: 70%; /* Reduce size for smaller screens */
+                height: 50%;
+                /* left:80%; */
+            }
+
+            .leftsection {
+                width: 100%; /* Take full width */
+                margin: 20px 0; /* Adjust margin for spacing */
+                font-size: 3rem;
+            }
+
+            .github-button {
+                width: 20%; /* Make buttons full width */
+                display: flex; /* Stack buttons vertically */
+                flex-direction: row;
+                /* align-items:center; */
+                justify-content: space-between;
+            }
+        }
+        /* education */
+        .second{
+            max-width: 80vw;
+            margin: auto;
+            margin-top: -30px;
+        }
+        
+        .education-container {
+            max-width: 80vw;
+            margin: auto;
+            text-align: center; 
+            margin-top: 250px; 
+        }
+        .education {
+             font-size: 70px;
+            margin-bottom: 20px;
+        }
+        
+        main hr{
+            background-color: rgb(139, 139, 225);
+            border: 0;
+            height: 1.5px;
+            margin: 100px 25px;
+        }
+        
+        .timeline{
+                position: relative;
+                max-width: 1200px;
+                margin: 100px auto;
+                color: black;
+        }
+        
+        .container{
+            padding: 40px 0px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .left-container, .right-container{
+            animation: movedown 1s linear forwards;
+            opacity: 0;
+        }
+        
+        @keyframes movedown{
+            0%{
+                opacity: 1;
+                transform: translateY(-30px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        .container:nth-child(1){
+            animation-delay:5s;
+        }
+        .container:nth-child(2){
+            animation-delay:7s;
+        }
+        .container:nth-child(3){
+            animation-delay:9s;
+        }
+        .text-box{
+            padding: 20px 30px;
+            background-color: #7ba7f2;
+            position: relative;
+            border-radius: 5px;
+            font-size: small;
+        }
+        .left-container{
+            left: -82px;
+        }
+        .left-container img{
+            left: 620px;
+        }
+        .right-container{
+            left: 55%;
+        }
+        .left-container img, .right-container img{
+            position: absolute;
+            width: 50px;
+            border-radius: 50%;
+            right: -58px;
+            top: 32px;
+            z-index: 10;
+            box-shadow: inset 0 0 10px rgb(230, 228, 223), 0 0 10px rgb(241, 232, 211);
+            border: 2px solid rgb(253, 249, 244);
+        }
+        .right-container img{
+            left: -84px;
+        }
+        
+        .timeline::after{
+            content: ' ';
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background-color: aliceblue;
+            top: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: -1;
+            animation: moveline 5s linear forwards;
+            animation-delay: 5s;
+            opacity: 0;
+        }
+        @keyframes moveline{
+            0%{
+                height: 0;
+                opacity: 1;
+            }
+            100%{
+                height: 100%;
+                opacity: 1;
+            }
+        }
+        .left-container-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 10px;
+            z-index: 2;
+            border-bottom: 15px  solid transparent;
+            border-top: 15px solid transparent;
+            border-left: 15px solid rgb(19, 52, 180);
+            right: -15px;
+        }
+        .right-container-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 10px;
+            z-index: 2;
+            border-bottom: 15px  solid transparent;
+            border-top: 15px solid transparent;
+            border-right: 15px solid grey;
+            left: -15px;
+        }
+
+        /* responsive */
+        /* Education responsive */
+        @media screen and (max-width: 768px){
+            
+            .timeline{
+                margin: 60px auto;
+            }
+            .timeline::after{
+                left: 26px;
+            }
+            .container{
+                width: 100%;
+                padding-left: 20px;
+                padding-right: 80px;
+            }
+            .left-container{
+                left: 40px;
+            }
+            .right-container{
+                left: 40px;
+            }
+            .text-box{
+                font-size: 13px;
+                width: 100%;
+                padding-right: 0;
+            } 
+            .text-box small{
+                margin-bottom: 10px;
+            }
+            .left-container img, .right-container img{
+                left: -40px;
+            }
+            .left-container-arrow, .right-container-arrow{
+                border-right: 5px solid white;
+                border-left: 0;
+                left: -15px;
+                width: 1px;
+            }
+            .education{
+                font-size: 40px;
+            }
+        }
+
+        /* Projects styling */
+        .projects-container {
+        max-width: 80vw;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .project h2 {
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 1em;
+            font-size: 70px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .project {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .project article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 4px solid #ccc;
+            box-shadow: 2px 2px 6px 0px rgba(58, 99, 202, 0.3);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin: 10px;
+        }
+
+        .project > article img {
+            max-width: 100%;
+        }
+
+        .text {
+            padding: 0 40px 0px;
+            margin-top: 20px;
+            margin-right: 0;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text > button {
+            background: black;
+            border: 2px solid black;
+            color: white;
+            padding: 10px;
+            width: 150px;
+            height: 50px;
+            min-width: 150px;
+            min-height: 50px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        /* Responsive Projects Section */
+        @media screen and (max-width: 768px) {
+            .project h2{
+                font-size: 40px;
+            }
+            .projects-container {
+                flex-direction: column;
+            }
+            .project {
+                flex-direction: column;
+            }
+            .project article {
+                max-width: 100%; 
+                margin: 10px auto; 
+            }
+            .text {
+                padding: 0 20px;
+            }
+            .text > button {
+                max-width: 60%; 
+                margin-top: 20px;
+            }
+        }
+        /* Contact form starts here */
+        .contact-form h2{
+            text-align: center;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            font-size: 70px;
+        }
+        .contact-form form{
+            max-width:100%;
+            margin: 1rem auto;
+            text-align: center;
+            margin-bottom: 3em;
+        }
+        .contact-form form .input-box{
+            display: flex;
+            justify-content:center;
+            flex-wrap: wrap;
+        }
+        .contact-form form .input-box input,  .contact-form form textarea{
+            width: 100%;
+            padding: 1.5em;
+            font-size: 18px;
+            color: black;
+            background-color: aliceblue;
+            border-radius: 0.8rem;
+            margin: 1rem 0;
+            resize: none;
+        }
+        .btn{
+            background: rgb(235, 220, 220);
+            border: 2px solid black;
+            color: black;
+            padding: 10px;
+            width: 150px;
+            height: 50px; 
+            min-width: 150px; 
+            min-height: 50px; 
+            margin-top: 40px;
+            border-radius: 40px;
+        }
+        .btn:hover{
+            transform: scale(1.1)translateY(-2px);
+            color: rgb(68, 118, 205);
+            border: 2px solid rgb(245, 240, 232);
+        }
+
+        /* footer */
+        .footer{
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            padding: 40px 0;
+            background-color: black;
+        }
+        .footer .social{
+            text-align: center;
+            padding-bottom: 25px;
+            color: white;
+        }
+        .footer .social a{
+            font-size: 24px;
+            color: white;
+            
+            width: 40px;
+            height: 40px;
+            line-height: 38px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            margin: 0 8px;
+            box-shadow: inset 0 0 10px blue, 0 0 10px blue;
+            border: 2px solid #2272FF;
+            transition: 0.4s ease;
+        }
+        .footer .social a:hover{
+            transform: scale(1.2)translateY(-5px);
+            color: orange;
+            border: 2px solid blue;
+        }
+        .footer ul{
+            margin-top: 0;
+            padding: 0;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        .footer ul li a{
+            color: white;
+            border-bottom: 3px solid transparent;
+            transition: 0.3s ease;
+        }
+        .footer ul li a:hover{
+            border-bottom: 3px solid orange;
+        }
+        .footer ul li{
+            display: inline-block;
+            padding: 0 15px;
+        }
+        .footer .copyright{
+            margin-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: white;
+        }
+
+        /* Contact form continuation */
+        #form {
+        width: 400px;
+        margin: 20vh auto 0 auto;
+        padding: 40px;
+        background-color: rgb(95, 93, 93);
+        border-radius: 4px;
+        font-size: 19px;
+        margin-left:75%;
+        margin-top: 20px;
+        color: #f0f0f0;
+        }
+
+        #form h1 {
+        color: #0e0f0f;
+        text-align: center;
+        margin-top:-20px;
+        }
+
+        #form button {
+        padding: 10px;
+        margin-top: 10px;
+        width: 100%;
+        color: white;
+        background-color: rgb(41, 57, 194);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        .input-control {
+        display: flex;
+        flex-direction: column;
+        }
+
+        .input-control input {
+        border: 2px solid #f0f0f0;
+	    border-radius: 4px;
+	    display: block;
+	    font-size: 12px;
+	    padding: 10px;
+	    width: 100%;
+        }
+
+        .input-control input:focus {
+        outline: 0;
+        }
+
+        .input-control.success input {
+        border-color: #09c372;
+        }
+
+        .input-control.error input {
+        border-color: #ff3860;
+        }
+
+        .input-control .error {
+        color: #ff3860;
+        font-size: 9px;
+        height: 13px;
+        }
+        /* Contact form Responsive Code */
+        @media (max-width: 768px) {
+            .contact-form h2{
+                font-size: 40px;
+            }
+            .contact-form form {
+                width: 67%; /* Ensure the form does not exceed the viewport width */
+                margin: 1rem auto; /* Center the form */
+            }
+
+            #form {
+                width: 100%; /* Make the form width responsive */
+                margin-left: 10vw; /* Remove any left margin */
+                margin-right: -100vw; /* Remove any right margin */
+            }
+        }
+
+
+
+    </style>
+    <link rel="stylesheet" href="bganimation.css">
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">DOPEfolio</div>
+            <div class="hamburger">
+                <div class="right">
+                    <ul>
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Education">Education</a></li>
+                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#Contactme">Contact Me</a></li>
+                    </ul>
+                </div>
+            </div>    
+        </nav>
+    </header>
+    <!-- script for responsive navbar -->
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function(){this.classList.toggle('active');});
+    </script>
+    
+    <main>
+        <section class="first" id="Home">
+            <div class="rightsection">
+                <img src="images/profilepic.jpg" alt="image">
+            </div>
+            <div class="leftsection">
+                Hii, My name is <span class="wordcolor">Ritul Kulkarni</span><br> and I am a<br>
+                <!-- <div>Web Developer</div>  -->
+                <span id="element"></span>
+                <div class="github-button">
+                    <button class="btn" onclick="openLinkInNeTab()">Visit Github</button>
+                    <script>
+                        let openLinkInNeTab = () => {
+                            window.open("https://github.com/RitulK", "_blank")
+                        };
+                    </script>
+                    <button class="btn" onclick="openLinInNewTab()">Resume</button>
+                    <script>
+                        let openLinInNewTab = () => {
+                            window.open("https://drive.google.com/file/d/1yp-Qk2MAc6cTAoAwiWldYO6TMxf2FoOG/view?usp=sharing", "_blank")
+                        };
+                    </script>
+                </div>
+
+            </div>
+            <div class="bgAnimation" id="bgAnimation">
+                <div class="backgroundAnim">
+                    
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="second" id="Education">
+            <div class="education-container">
+                <h2 class="education">Education</h2>
+                <div class="timeline">
+                    <div class="container left-container">
+                        <img src="images/gscslogo.png" alt="" class="src" width="10" height="50">
+                        <div class="text-box">
+                            <h2>Good Shepherd Central School</h2>
+                            <small>2016 - 2020</small>
+                            <p>The journey of life starts with the values and the learnings gained from the school. Completed my schooling and passed std.X with 87% in CBSE board. Gained leadership skills by successfully managing Interact Club of my school as a President.</p>
+                            <span class="left-container-arrow"></span>
+                        </div>
+                    </div>
+                    <div class="container right-container">
+                        <img src="images/gsslogo.jpg" alt="" class="src" width="10" height="50">
+                        <div class="text-box">
+                            <h2>Govindram Seksaria Science PU College </h2>
+                            <small>2020 - 2022</small>
+                            <p>Passed out std.XII with 94% in Karnataka Board.</p>
+                            <span class="right-container-arrow"></span>
+
+                        </div>
+                    </div>
+                    <div class="container left-container">
+                        <img src="images/somaiyalogo.png" alt="" class="src" width="10" height="50">
+                        <div class="text-box">
+                            <h2>K J Somaiya College of Engineering</h2>
+                            <small>2022 - 2026</small>
+                            <p>Currently in my 2nd year of B.Tech in Information Technology with CGPA averaging 8.4<br>Along with academics, pursuing my interests in Photography, videography and video editing. Trying to be a humble creator✌️</p>
+                            <span class="left-container-arrow"></span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="project" id="Projects">
+            <div class="projects-container">
+                <h2 class="project">Projects</h2>
+                <div class="projectdiv">
+                    <article>
+                        <img src="images/calorie_tracker.jpg" alt="Sample photo" height="250" width="390">
+                        <div class="text">
+                            <h1>Calorie Tracker</h1>
+                            <p>Tracks the daily calorie intake of the person</p>
+                            <p>Generates weekly stats</p>
+                            <p>Recommendations based on the person's diet</p>
+                            <button class="btn" onclick="penLinkInNewTab()">View Project</button>
+                            <script>
+                                let penLinkInNewTab = () => {
+                                    window.open("https://github.com/RitulK/Calorie-Tracker", "_blank")
+                                };
+                            </script>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="images/khelsetu.jpg" alt="Sample photo" height="250" width="390">
+                        <div class="text">
+                            <h3>Khel Sethu</h3>
+                            <p>Caters to online creation,& registrations of new sporting events</p>
+                            <P>Registration and Monitoring Participants</P>
+                            <p>Admin dashboard to create, update,& delete the events</p>
+                            <button class="btn" onclick="opeLinkInNewTb()">View Project</button>
+                            <script>
+                                let opeLinkInNewTb = () => {
+                                    window.open("https://github.com/RitulK/Sports-Event-Management-System", "_blank")
+                                };
+                            </script>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="images/bmi.png" alt="Sample photo" height="250" width="390">
+                        <div class="text">
+                            <h3>BMI Calculator App</h3>
+                            <p>Calculates the BMI based on:</p>
+                            <P>1. Weight</P>
+                            <p>2. Height</p>
+                            <button class="btn" onclick="opeLinkInNewTb()">View Project</button>
+                            <script>
+                                let opeLinkInNwTab = () => {
+                                    window.open("https://github.com/RitulK/BMI-Calculator-App/tree/master", "_blank")
+                                };
+                            </script>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="images/ytvideo.png" alt="Sample photo" height="250" width="390">
+                        <div class="text">
+                            <h3>Cinematic Video</h3>
+                            <p>Perfect shots with proper color grading brings the video to life</p>
+                            <button class="btn" onclick="openLinkInNewTa()">View Project</button>
+                            <script>
+                                let openLinkInNewTa = () => {
+                                    window.open("https://youtu.be/lMBkrosdFks?si=SvSi1WAHKgcM6-Wi", "_blank")
+                                };
+                            </script>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="contact-form" id="Contactme">
+            <h2 class="contact-me">Contact<span> Me</span></h2>
+            <!-- <form action="#">
+                <div class="input-box">
+                    <input type="text" name="username" id="username" placeholder="Name">
+                    <input type="email" id="email" name="email" placeholder="Email address">
+                </div>
+                <textarea name="message" id="message" cols="10" rows="8" placeholder="Your Message" ></textarea>
+                <div class="button">
+                    <button class="btn" type="submit">Send Message</button>
+                </div>
+            </form> -->
+            <div class="container">
+                <form id="form" method="POST" action="/" >
+                    <h1>Make me happy <br> drop down a message :)</h1>
+                    <!-- <input type="hidden" name="access_key" value="10f2d652-06cc-4a78-af3f-afd7d8f88fde"> -->
+
+                    <div class="input-control">
+                        <label for="username">Username</label>
+                        <input id="username" name="username" type="text" placeholder="Enter your name">
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="text" placeholder="Email address">
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <label for="messageme">Message</label>
+                        <input id="messageme" name="message" type="text" placeholder="Enter your message">
+                        <div class="error"></div>
+                    </div>
+                    <button type="submit" name="submit">Submit</button>
+
+                    <div id="successMessage"></div>
+
+                </form>
+                <script>
+                    
+                </script>
+            </div>
+            
+        </section>
+    
+        <footer class="footer">
+            <div class="social">
+                <a href="https://www.linkedin.com/in/ritul-kulkarni-15123a256/" target="_blank" rel="noopener no-referrer"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/ritulshootsstuff/ " target="_blank" rel="noopener no-referrer"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@ritulkulkarni2603" target="_blank" rel="noopener no-referrer"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://github.com/RitulK" target="_blank" rel="noopener no-referrer"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="#Home">Home</a>
+                </li>
+                <li>
+                    <a href="#Education">Education</a>
+                </li>
+                <li>
+                    <a href="#Projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#Contactme">Contact me</a>
+                </li>
+            </ul>
+            <p class="copyright">© 2024 Ritul Kulkarni | All Rights Reserved</p>
+        </footer>
+    </main>
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Web Dev.', 'Video Editor', 'Photographer', 'Techie','Student@KJSCE'],
+          typeSpeed: 50
+        });
+      </script>
+      <script src="bganimation.js"></script>
+      <!-- <script src="index.js"></script> -->
+      
+</body>
+
+</html>
