@@ -10,4 +10,4 @@ Technologies Used
 Frontend: HTML, CSS, JavaScript
 Backend: Node.js, Express.js
 Database: MongoDB
-Click the link given to view my website: 
+Click the link given to view my website: rituldopefolio.onrender.com/
