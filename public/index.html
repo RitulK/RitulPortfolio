@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoPeFolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" type="x-icon" href="\images\logo.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -119,19 +119,20 @@
         }
         .leftsection{
             width: 50%;
-            font-size: 5rem;
+            font-size: 9rem;
             margin: 20px 30px;
             z-index: 10;
-            margin-top: 1%;
+            margin-top: 9%;
         }
         .rightsection{
             z-index: 10;
             margin-top: 4%;
         }
         .github-button .btn{
-            border-radius:10px;
+            border-radius:70px;
             background-color: #1d1b26;
             color: white;
+            font-size: large;
         }
         .github-button .btn:nth-child(2){
             background-color: white;
@@ -183,7 +184,7 @@
             }
         }
         /* education */
-        .second{
+        /* .second{
             max-width: 80vw;
             margin: auto;
             margin-top: -30px;
@@ -319,11 +320,11 @@
             border-top: 15px solid transparent;
             border-right: 15px solid grey;
             left: -15px;
-        }
+        } */
 
         /* responsive */
         /* Education responsive */
-        @media screen and (max-width: 768px){
+        /* @media screen and (max-width: 768px){
             
             .timeline{
                 margin: 60px auto;
@@ -362,10 +363,380 @@
             .education{
                 font-size: 40px;
             }
-        }
+        } */
+
+        /* ===== ABOUT ===== */
+section.about {
+    padding: 20vh 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: xxx-large;
+}
+
+.sectiontitl{
+    margin:3% 20% 4% 20%;
+}
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+}
+
+.about-intro{
+    font-size: larger;
+    color: white;
+}
+
+.about-intronext{
+    font-size: large;
+    margin-bottom: 2%;
+    color: white;
+}
+.about-subtitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fffbfb;
+    margin-bottom: 1rem;
+}
+
+.about-text {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #e6dddd;
+    letter-spacing: 0.1em;
+}
+
+.about-contact {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #c3bfbf;
+}
+
+.about-contact i {
+    color: #4070f4;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.about-img img {
+    width: 200px;
+    border-radius: 0.5rem;
+}
+
+/* Add smooth transitions for hover effects */
+.about-container {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.about-container:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+/* Add a background gradient for better visual appeal */
+section.about {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    border-radius: 10px;
+    padding: 15vh 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Animate the heading with subtle scaling */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffffff;
+    animation: fadeInTitle 1s ease;
+    font-size: xxx-large;
+}
+
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Refine contact section */
+.about-contact {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    color: #c9c9c9;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #4070f4;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-contact:hover {
+    background-color: #4070f4;
+    color: #ffffff;
+}
+
+/* Adjust icon hover effect */
+.about-contact i:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Style the hidden image section */
+.about-img img {
+    transition: transform 0.5s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 1.2rem;
+    }
+
+    .about-contact {
+        font-size: 1rem;
+    }
+}
+
+
+/* ===== SKILLS ===== */
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.skillstitle{
+    font-size:xxx-large;
+    margin:100px 0px 100px 47%;
+}
+
+.skills-column {
+  flex: 1;
+  max-width: 45%;
+  margin-bottom: 2rem;
+}
+
+.skills-subtitle {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.skills-data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 15px rgba(14, 36, 49, 0.1);
+  background-color: rgba(0, 0, 255, 0.1);
+}
+
+.skills-icon {
+  width: 2.5rem;
+  font-size: 2.2rem;
+  margin-right: 1rem;
+  color: var(--first-color);
+}
+
+.skills-names {
+  display: flex;
+  align-items: center;
+}
+
+.skills-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .skills-column {
+    max-width: 100%;
+  }
+  .skills-container {
+    flex-direction: column;
+  }
+}
+
+.skills-data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 15px rgba(14, 36, 49, 0.1);
+  background-color: rgba(0, 0, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.skills-data:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(14, 36, 49, 0.3);
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .skills-data {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  .skills-data:active {
+    transform: scale(0.97); /* Slightly shrink the box to show it's being tapped */
+    box-shadow: 0 3px 12px rgba(14, 36, 49, 0.2); /* Adjust shadow to give feedback */
+    background-color: rgba(0, 0, 255, 0.15); /* Slightly darker background for feedback */
+  }
+
+  .skills-container {
+    flex-direction: column; /* Stack skills for smaller screens */
+    gap: 1.5rem;
+  }
+
+  .skills-column {
+    max-width: 100%; /* Take full width on mobile */
+  }
+
+  .skillstitle{
+    margin-left: 40%;
+  }
+
+  .skills-subtitle {
+    font-size: 1.2rem; /* Smaller font size for subtitles */
+  }
+
+  .skills-name {
+    font-size: 1rem; /* Adjust font size for mobile readability */
+  }
+}
+
+/* Certification horizontal scroll */
+.certifications-slider-container {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.certifications-slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Certification Cards */
+
+.sectiontitle{
+    margin: 8% 8% 6% 44%;
+    font-size: xxx-large;
+}
+.certification-card {
+  flex: 0 0 30%; /* Show only 3 cards at a time */
+  background: #112240;
+  border-radius: 15px;
+  margin: 0 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.cert-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.cert-footer {
+  margin-top: 20px;
+}
+
+.view-cert-btn {
+  background-color: #1f8feb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-cert-btn:hover {
+  background-color: #0e6b9e;
+}
+
+/* Slider Controls */
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.slider-controls button {
+  background-color: #1f8feb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+  margin:60px 0 60px 20px;
+}
+
+.slider-controls button:hover {
+  background-color: #0e6b9e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certification-card {
+    flex: 0 0 80%; /* Show only 1 card on smaller screens */
+  }
+  .sectiontitle{
+    margin:20% 0px 20% 11%;
+  }
+}
+
+
 
         /* Projects styling */
-        .projects-container {
+        /* .projects-container {
         max-width: 80vw;
         margin: auto;
         display: flex;
@@ -430,7 +801,7 @@
             cursor: pointer;
         }
 
-        /* Responsive Projects Section */
+        Responsive Projects Section
         @media screen and (max-width: 768px) {
             .project h2{
                 font-size: 40px;
@@ -452,7 +823,100 @@
                 max-width: 60%; 
                 margin-top: 20px;
             }
-        }
+        } */
+
+        .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1d1b26;
+}
+
+/* Project Container */
+.project-container {
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Project Card */
+.project-card {
+  background: #86a3c2;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Project Image */
+.project-img img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.project-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Project Title */
+.project-title {
+  font-size: 1.5rem;
+  margin: 1rem 1rem 0.5rem;
+  color: #1d1b26;
+}
+
+/* Project Subtitle */
+.project-subtitle {
+  font-size: 1rem;
+  margin: 0 1rem 1.5rem;
+  color: #666;
+}
+
+/* Buttons */
+.project-btns {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.small-btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+}
+
+.small-btn:hover {
+  background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 1.25rem;
+  }
+  .project-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
         /* Contact form starts here */
         .contact-form h2{
             text-align: center;
@@ -462,9 +926,9 @@
         }
         .contact-form form{
             max-width:100%;
-            margin: 1rem auto;
+            margin: 10% 100% 50% 40%;
             text-align: center;
-            margin-bottom: 3em;
+            /* margin-bottom: 3em; */
         }
         .contact-form form .input-box{
             display: flex;
@@ -478,7 +942,7 @@
             color: black;
             background-color: aliceblue;
             border-radius: 0.8rem;
-            margin: 1rem 0;
+            /* margin: 1rem 0; */
             resize: none;
         }
         .btn{
@@ -486,8 +950,8 @@
             border: 2px solid black;
             color: black;
             padding: 10px;
-            width: 150px;
-            height: 50px; 
+            width: 250px;
+            height: 100px; 
             min-width: 150px; 
             min-height: 50px; 
             margin-top: 40px;
@@ -561,13 +1025,14 @@
 
         /* Contact form continuation */
         #form {
-        width: 400px;
-        margin: 20vh auto 0 auto;
+        width: 26vw;
+        height:53vh;
+        margin: 20vh auto 30px auto;
         padding: 40px;
         background-color: rgb(95, 93, 93);
         border-radius: 4px;
-        font-size: 19px;
-        margin-left:75%;
+        font-size: 35px;
+        /* margin-left:75%; */
         margin-top: 20px;
         color: #f0f0f0;
         }
@@ -576,6 +1041,7 @@
         color: #0e0f0f;
         text-align: center;
         margin-top:-20px;
+        font-size:xxx-large;
         }
 
         #form button {
@@ -587,6 +1053,7 @@
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        font-size: large;
         }
 
         .input-control {
@@ -598,7 +1065,7 @@
         border: 2px solid #f0f0f0;
 	    border-radius: 4px;
 	    display: block;
-	    font-size: 12px;
+	    font-size: 26px;
 	    padding: 10px;
 	    width: 100%;
         }
@@ -631,9 +1098,24 @@
             }
 
             #form {
-                width: 100%; /* Make the form width responsive */
-                margin-left: 10vw; /* Remove any left margin */
-                margin-right: -100vw; /* Remove any right margin */
+                width: 98%; /* Make the form width responsive */
+                margin-left: 1vw; /* Remove any left margin */
+                min-height: 20vh;
+            }
+        }
+        @media (min-width: 820px) and (max-width: 1200px) {
+            .contact-form h2 {
+                font-size: 2.4rem;
+            }
+
+            .contact-form form {
+                max-width: 1000px;
+                height: 1000px;
+            }
+
+            .btn {
+                font-size: 1rem;
+                max-width: 250px;
             }
         }
 
@@ -652,8 +1134,9 @@
                 <div class="right">
                     <ul>
                         <li><a href="#Home">Home</a></li>
-                        <li><a href="#Education">Education</a></li>
-                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#Contactme">Contact Me</a></li>
                     </ul>
                 </div>
@@ -671,7 +1154,7 @@
                 <img src="images/profilepic.jpg" alt="image">
             </div>
             <div class="leftsection">
-                Hii, My name is <span class="wordcolor">Ritul Kulkarni</span><br> and I am a<br>
+                Hello. I am <br>
                 <!-- <div>Web Developer</div>  -->
                 <span id="element"></span>
                 <div class="github-button">
@@ -684,7 +1167,7 @@
                     <button class="btn" onclick="openLinInNewTab()">Resume</button>
                     <script>
                         let openLinInNewTab = () => {
-                            window.open("https://drive.google.com/file/d/1yp-Qk2MAc6cTAoAwiWldYO6TMxf2FoOG/view?usp=sharing", "_blank")
+                            window.open("https://drive.google.com/drive/folders/18Gz-64AB5bBcIRwGhnjeiWOVkYCid-v0?usp=sharing", "_blank")
                         };
                     </script>
                 </div>
@@ -697,7 +1180,7 @@
             </div>
         </section>
         <hr>
-        <section class="second" id="Education">
+        <!-- <section class="second" id="Education">
             <div class="education-container">
                 <h2 class="education">Education</h2>
                 <div class="timeline">
@@ -732,89 +1215,310 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <hr>
-        <section class="project" id="Projects">
-            <div class="projects-container">
-                <h2 class="project">Projects</h2>
-                <div class="projectdiv">
-                    <article>
-                        <img src="images/calorie_tracker.jpg" alt="Sample photo" height="250" width="390">
-                        <div class="text">
-                            <h1>Calorie Tracker</h1>
-                            <p>Tracks the daily calorie intake of the person</p>
-                            <p>Generates weekly stats</p>
-                            <p>Recommendations based on the person's diet</p>
-                            <button class="btn" onclick="penLinkInNewTab()">View Project</button>
-                            <script>
-                                let penLinkInNewTab = () => {
-                                    window.open("https://github.com/RitulK/Calorie-Tracker", "_blank")
-                                };
-                            </script>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="images/khelsetu.jpg" alt="Sample photo" height="250" width="390">
-                        <div class="text">
-                            <h3>Khel Sethu</h3>
-                            <p>Caters to online creation,& registrations of new sporting events</p>
-                            <P>Registration and Monitoring Participants</P>
-                            <p>Admin dashboard to create, update,& delete the events</p>
-                            <button class="btn" onclick="opeLinkInNewTb()">View Project</button>
-                            <script>
-                                let opeLinkInNewTb = () => {
-                                    window.open("https://github.com/RitulK/Sports-Event-Management-System", "_blank")
-                                };
-                            </script>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="images/bmi.png" alt="Sample photo" height="250" width="390">
-                        <div class="text">
-                            <h3>BMI Calculator App</h3>
-                            <p>Calculates the BMI based on:</p>
-                            <P>1. Weight</P>
-                            <p>2. Height</p>
-                            <button class="btn" onclick="opeLinkInNewTb()">View Project</button>
-                            <script>
-                                let opeLinkInNwTab = () => {
-                                    window.open("https://github.com/RitulK/BMI-Calculator-App/tree/master", "_blank")
-                                };
-                            </script>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="images/ytvideo.png" alt="Sample photo" height="250" width="390">
-                        <div class="text">
-                            <h3>Cinematic Video</h3>
-                            <p>Perfect shots with proper color grading brings the video to life</p>
-                            <button class="btn" onclick="openLinkInNewTa()">View Project</button>
-                            <script>
-                                let openLinkInNewTa = () => {
-                                    window.open("https://youtu.be/lMBkrosdFks?si=SvSi1WAHKgcM6-Wi", "_blank")
-                                };
-                            </script>
-                        </div>
-                    </article>
-                </div>
+        </section> -->
+        
+       <!--===== ABOUT =====-->
+<section class="about section" id="about">
+    <h1 class="sectiontitl">About</h1>
+
+    <div class="about-container">
+        <!-- Uncomment the following block to add an image -->
+        <!-- 
+        <div class="about-img">
+            <img src="assets/img/Profile1.png" alt="Profile Picture" />
+        </div>
+        -->
+
+        <div>
+            <!-- <h2 class="about-subtitle">My Awesome Skills</h2> -->
+            <p class="about-intro">Ritul Kulkarni<br></p>
+              <p class="about-intronext">IT Student | Aspiring Software Developer | Tech Enthusiast</p>
+            <p class="about-text">
+
+Welcome to my portfolio! I'm an Information Technology student at K J Somaiya College of Engineering with a passion for building impactful solutions using cutting-edge technologies. I specialize in front-end development, data analytics, and machine learning, and I'm always eager to explore new challenges in the tech world.
+<br><br>
+Internship Experience: <br>
+IoT internship focused on water quality analysis. <br>
+App development internship involving machine learning. <br><br>
+Other Interests: Tech gadgets, photography, videography, and video editing.
+Let’s Connect! <br>
+Scroll down to explore my projects, or contact me for collaboration opportunities.
+            </p>
+            <p class="about-contact">
+                Drop a mail - ritulkulkarni03@gmail.com
+                <i class="bx bx-copy" id="copy" title="Copy to Clipboard"></i>
+            </p>
+            
+        </div>
+    </div>
+</section>
+<hr>
+<!--===== SKILLS =====-->
+<section class="skills section" id="skills">
+    <h2 class="skillstitle">Skills</h2>
+
+    <div class="skills-container bd-grid">
+      <div class="skills-column">
+        <h2 class="skills-subtitle">Devp. & Design Skills</h2>
+        <div class="skills-data">
+          <div class="skills-names">
+            <i class="bx bxl-html5 skills-icon"></i>
+            <img class="skills-icon" src="\images\html.png" alt="html" />
+            <span class="skills-name">HTML5</span>
+          </div>
+        </div>
+        <div class="skills-data">
+          <div class="skills-names">
+            <i class="bx bxl-css3 skills-icon"></i>
+            <img class="skills-icon" src="\images\css-3.png" alt="css" />
+            <span class="skills-name">CSS3</span>
+          </div>
+        </div>
+        <div class="skills-data">
+          <div class="skills-names">
+            <i class="bx bxl-react skills-icon"></i>
+            <img class="skills-icon" src="\images\science.png" alt="react" />
+            <span class="skills-name">React</span>
+          </div>
+        </div>
+        <div class="skills-data">
+          <div class="skills-names">
+            <i class="bx bxl-redux skills-icon"></i>
+            <img class="skills-icon" src="\images\flutter.png" alt="flutter" />
+            <span class="skills-name">Flutter</span>
+          </div>
+        </div>
+        <div class="skills-data">
+          <div class="skills-names">
+            <i class="bx bxs-paint skills-icon"></i>
+            <img class="skills-icon" src="\images\figma.png" alt="figma" />
+            <span class="skills-name">Figma</span>
+          </div>
+        </div>
+        <div class="skills-data">
+          <div class="skills-names">
+            <i class="bx bxs-paint skills-icon"></i>
+            <img class="skills-icon" src="\images\blender-icon.png" alt="blender" />
+            <span class="skills-name">Blender</span>
+          </div>
+        </div>
+      </div>
+      <div class="skills-column">
+        <h2 class="skills-subtitle">Prog., Back-end & Version Control Skills</h2>
+        <div class="skills-data">
+          <div class="skills-names">
+            <img class="skills-icon" src="\images\express.png" alt="express" />
+            <span class="skills-name">Express.js</span>
+          </div>
+        </div>
+        <div class="skills-data">
+          <div class="skills-names">
+            <!-- <i class="bx bxl-nodejs skills-icon"></i> -->
+            <img class="skills-icon" src="\images\nodejs.png" alt="nodejs" />
+            <span class="skills-name">Node.js</span>
+          </div>
+        </div>
+        <div class="skills-data">
+          <div class="skills-names">
+            <img class="skills-icon" src="\images\sql.png" alt="sql" />
+            <span class="skills-name">SQL Server</span>
+          </div>
+        </div>
+        <div class="skills-data">
+          <div class="skills-names">
+            <img class="skills-icon" src="\images\mongo.png" alt="mongodb" />
+            <span class="skills-name">MongoDB</span>
+          </div>
+        </div>
+        <div class="skills-data">
+            <div class="skills-names">
+                <img class="skills-icon" src="\images\php.png" alt="php" />
+                <span class="skills-name">PHP</span>
             </div>
-        </section>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names">
+                <img class="skills-icon" src="\images\python.png" alt="python" />
+                <span class="skills-name">Python</span>
+            </div>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names">
+                <img class="skills-icon" src="\images\flask.png" alt="flask" />
+                <span class="skills-name">Flask</span>
+            </div>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names">
+                <img class="skills-icon" src="\images\scikitlearn.png" alt="scikitlearn" />
+                <span class="skills-name">Machine Learning with Scikit-learn</span>
+            </div>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names">
+                <img class="skills-icon" src="\images\datasci.png" alt="datascience" />
+                <span class="skills-name">Data Science</span>
+            </div>
+          </div>
+      </div>
+    </div>
+</section>
+   <hr>  
+<section class="achievements" id="achievements">
+    <h2 class="sectiontitle ">Achievements</h2>
+    <div class="certifications-slider-container">
+      <div class="certifications-slider">
+        <div class="certification-card">
+          <img src="\images\ibm.png" alt="AWS Logo" class="cert-logo">
+          <h3>Machine Learning with Python(Honours)</h3>
+          <p>Hands on experience with various ML models | Rain Prediction Project</p>
+          <div class="cert-footer">
+            <button class="view-cert-btn" onclick="window.open('https://drive.google.com/file/d/1mPjuqmPnoF82VRyjgFF2rSuvszQIE4n7/view?usp=sharing')">View Certificate</button>
+          </div>
+        </div>
+        <div class="certification-card">
+          <img src="\images\ibm.png" alt="Linux Logo" class="cert-logo">
+          <h3>Developing AI Applications with Python & Flask</h3>
+          <p>Using Flask for AI app building | Sentiment Analysis, Emotion Detection Projects</p>
+          <div class="cert-footer">
+            <button class="view-cert-btn" onclick="window.open('https://drive.google.com/file/d/1NwBYaFINlxUvElp5ji-t2vFNPGh0GPrc/view?usp=drive_link')">View Certificate</button>
+          </div>
+        </div>
+        <div class="certification-card">
+          <img src="\images\michiganu.jpg" alt="Azure Logo" class="cert-logo">
+          <h3>Game Design & Development</h3>
+          <p>Solar System environment & 2D Shooter Game Development | Unity</p>
+          <div class="cert-footer">
+            <button class="view-cert-btn" onclick="window.open('https://drive.google.com/file/d/11IMCZbD5SOrhYQF9lGJZFQRxGKqsLtP6/view?usp=drive_link')">View Certificate</button>
+          </div>
+        </div>
+        <div class="certification-card">
+          <img src="\images\ISRO-Color.png" alt="isro" class="cert-logo">
+          <h3>Bharatiya Antariksh Hackathon</h3>
+          <p>Nowcasting of Precipitation Systems using C-Band Doppler Radar Observations</p>
+          <div class="cert-footer">
+            <button class="view-cert-btn" onclick="window.open('https://certificate.hack2skill.com/user/isrobahp/2024H2S07ISRO-P00634')">View Certificate</button>
+          </div>
+        </div>
+        <div class="certification-card">
+          <br><br><br><br>
+          <!-- <img src="\public\images\ISRO-Color.png" alt="GCP Logo" class="cert-logo"> -->
+          <h3>View Other Certifications</h3>
+          <p></p>
+          <div class="cert-footer">
+            <button class="view-cert-btn" onclick="window.open('https://drive.google.com/drive/folders/1WGyE3KW6BUxxxxugqbInKL0B_cIiD87f?usp=sharing')">View Certificates</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="prev-btn">‹</button>
+      <button class="next-btn">›</button>
+    </div>
+  </section>
+  <script src="script.js"></script>
+
         <hr>
+        
+
+        <section class="projects section" id="projects">
+            <h2 class="sectiontitle">Projects</h2>
+            <div class="project-container">
+              <!-- Project 1 -->
+              <div class="project-card">
+                <div class="project-img">
+                  <img src="\images\emotion.png" alt="emotion detector" />
+                </div>
+                <h3 class="project-title">Emotion Detector</h3>
+                <p class="project-subtitle">
+                    An NLP-based emotion detection system developed using the Embeddable Watson AI Library, capable of analyzing text data and categorizing emotions like joy, sadness, fear, and anger. Designed for applications in feedback analysis, social media monitoring, and mental health support.
+                  <br /><br />Python | NLP | Watson AI | IBM Tools
+                </p>
+                <div class="project-btns">
+                  <a href="https://github.com/RitulK/Emotion-Detection" target="_blank" class="small-btn">Code</a>
+                </div>
+              </div>
+          
+              <!-- Project 2 -->
+              <div class="project-card">
+                <div class="project-img">
+                  <img src="\images\iot.png" alt="IOT" />
+                </div>
+                <h3 class="project-title">IoT Water Quality Analysis</h3>
+                <p class="project-subtitle">
+                    A real-time water quality monitoring project utilizing IoT sensors like TDS and Turbidity, integrated with a MySQL database and a web interface for visualizing live and historical data.
+                  <br /><br />IoT Sensors | MySQL | phpMyAdmin | Web Technologies
+                </p>
+                <div class="project-btns">
+                  <a href="https://github.com/RitulK/Water-Quality-Analysis-IOT-" target="_blank" class="small-btn">Code</a>
+                </div>
+              </div>
+          
+              <!-- Project 3 -->
+              <div class="project-card">
+                <div class="project-img">
+                  <img src="\images\calorie.png" alt="calorie" />
+                </div>
+                <h3 class="project-title">Calorie Tracker</h3>
+                <p class="project-subtitle">
+                    A Python-based application with a user-friendly GUI to track daily calorie intake, calculate stats, and visualize calorie trends using data visualization libraries.
+                  <br /><br />Python | Tkinter | Matplotlib | Pandas
+                </p>
+                <div class="project-btns">
+                  <a href="https://github.com/RitulK/Calorie-Tracker" target="_blank" class="small-btn">Code</a>
+                </div>
+              </div>
+          
+              <!-- Project 4 -->
+              <div class="project-card">
+                <div class="project-img">
+                  <img src="\images\alexa.png" alt="MiniShopping" />
+                </div>
+                <h3 class="project-title">Sentiment Analysis on Amazon Alexa Reviews</h3>
+                <p class="project-subtitle">
+                    A machine learning project leveraging Random Forest and XGBoost algorithms to classify product reviews as positive or negative. Extended into a Flask-based web application for real-time sentiment analysis.
+                  <br /><br />Python | Flask | Random Forest | XGBoost | ML
+                </p>
+                <div class="project-btns">
+                  <a href="https://github.com/RitulK/Amazon_Alexa-Sentiment-Analysis" target="_blank" class="small-btn">Code</a>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-img">
+                  <img src="\images\nlpsentiment.png" alt="nlpsentiment" />
+                </div>
+                <h3 class="project-title">NLP Sentiment Analysis</h3>
+                <p class="project-subtitle">
+                    A sentiment analysis project that classifies user-generated text into positive, negative, or neutral sentiment categories using Natural Language Processing (NLP) techniques and the Embeddable Watson AI Library. Ideal for feedback analysis and brand reputation management.
+                  <br /><br />Python | NLP | Watson AI | IBM Tools
+                </p>
+                <div class="project-btns">
+                  <a href="https://github.com/RitulK/Sentiment-Analysis" target="_blank" class="small-btn">Code</a>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-img">
+                  <img src="\images\weather.jpg" alt="nlpsentiment" />
+                </div>
+                <h3 class="project-title">Weather-Wise:Predicting Rain with Precision </h3>
+                <p class="project-subtitle">
+                  This project leverages machine learning to predict whether it will rain tomorrow based on historical weather data. By analyzing patterns in attributes like temperature, humidity, and wind speed, the model provides accurate, data-driven weather forecasts for improved planning and preparedness.
+                  <br /><br />Python | Machine Learning | Weather Forecasting | Scikit-learn | Pandas
+                </p>
+                <div class="project-btns">
+                  <a href="https://github.com/RitulK/Weather-Wise-Predicting-Rain-with-Precision " target="_blank" class="small-btn">Code</a>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+        <hr>
+
         <section class="contact-form" id="Contactme">
             <h2 class="contact-me">Contact<span> Me</span></h2>
-            <!-- <form action="#">
-                <div class="input-box">
-                    <input type="text" name="username" id="username" placeholder="Name">
-                    <input type="email" id="email" name="email" placeholder="Email address">
-                </div>
-                <textarea name="message" id="message" cols="10" rows="8" placeholder="Your Message" ></textarea>
-                <div class="button">
-                    <button class="btn" type="submit">Send Message</button>
-                </div>
-            </form> -->
             <div class="container">
                 <form id="form" method="POST" action="/" >
-                    <h1>Make me happy <br> drop down a message :)</h1>
+                    <h1>Message</h1>
                     <!-- <input type="hidden" name="access_key" value="10f2d652-06cc-4a78-af3f-afd7d8f88fde"> -->
 
                     <div class="input-control">
@@ -837,9 +1541,6 @@
                     <div id="successMessage"></div>
 
                 </form>
-                <script>
-                    
-                </script>
             </div>
             
         </section>
@@ -856,10 +1557,13 @@
                     <a href="#Home">Home</a>
                 </li>
                 <li>
-                    <a href="#Education">Education</a>
+                    <a href="#about">About</a>
                 </li>
                 <li>
-                    <a href="#Projects">Projects</a>
+                    <a href="#achievements">Achievements</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
                 </li>
                 <li>
                     <a href="#Contactme">Contact me</a>
@@ -872,13 +1576,13 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-          strings: ['Web Dev.', 'Video Editor', 'Photographer', 'Techie','Student@KJSCE'],
+          strings: ['Ritul Kulkarni'],
           typeSpeed: 50
         });
       </script>
       <script src="bganimation.js"></script>
-      <!-- <script src="index.js"></script> -->
-      
+      <script src="index.js"></script>
+      <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>

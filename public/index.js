@@ -65,3 +65,77 @@
 //         })
 
 // };
+
+
+/*===== COPY Email =====*/
+// const copy = document.getElementById( "copy" );
+// copy.addEventListener( "click", () => {
+//   navigator.clipboard.writeText( "zulfiqarshaikhofficial92@gmail.com" );
+//   copy.innerHTML = "copied";
+//   setTimeout( () => {
+//     copy.innerHTML = null;
+//   }, 1000 );
+// } );
+
+document.getElementById("copy").addEventListener("click", () => {
+    navigator.clipboard.writeText("ritulkulkarni03@gmail.com");
+    alert("Email copied to clipboard!");
+});
+
+
+/*===== SCROLL REVEAL ANIMATION =====*/
+const sr = ScrollReveal( {
+  origin: "top",
+  distance: "80px",
+  duration: 800,
+  reset: true,
+} );
+
+/*SCROLL ABOUT*/
+// sr.reveal( ".about-img", {} );
+// sr.reveal( ".about-subtitle", { delay: 400 } );
+// sr.reveal( ".about-text", { delay: 400 } );
+
+sr.reveal(".about-intro", { 
+    delay: 200, 
+    origin: "top", 
+    distance: "50px", 
+    duration: 1000, 
+    easing: "ease-out" 
+});
+
+sr.reveal(".about-intronext", { 
+    delay: 300, 
+    origin: "right", 
+    distance: "50px", 
+    duration: 1000, 
+    easing: "ease-out" 
+});
+
+sr.reveal(".about-text", { 
+    delay: 400, 
+    origin: "bottom", 
+    distance: "50px", 
+    duration: 1200, 
+    easing: "ease-in-out", 
+    opacity: 0 
+});
+
+sr.reveal(".about-contact", { 
+    delay: 500, 
+    scale: 0.8, 
+    duration: 1000, 
+    easing: "ease-out", 
+    opacity: 0 
+});
+
+
+
+/*SCROLL SKILLS*/
+sr.reveal( ".skills-subtitle", {} );
+sr.reveal( ".skills-text", {} );
+sr.reveal( ".skills-data", { interval: 100 } );
+// sr.reveal(".skills-img", { delay: 600 });
+
+/*SCROLL projects*/
+sr.reveal( ".project-img", { interval: 200 } );
