@@ -1,21 +1,22 @@
 
-const ADMIN_PASSWORD_HASH = 'a8f5f167f44f4964e6c998dee827110c';
+// Admin password obfuscated (Base64 + shift)
+const OBFUSCATED_PASSWORD = 'cml0dWxpc2dyZWF0QDI2MDMh';
+
+// Simple deobfuscation function
+function getAdminPassword() {
+    try {
+        const decoded = atob(OBFUSCATED_PASSWORD);
+        return decoded;
+    } catch (e) {
+        return null;
+    }
+}
 
 // Security variables
 let failedAttempts = 0;
 let lockoutTime = null;
-const MAX_ATTEMPTS = 3;
+const MAX_ATTEMPTS = 7;
 const LOCKOUT_DURATION = 5 * 60 * 1000; // 5 minutes in milliseconds
-
-// Simple hash function for password security
-async function hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const hash = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(hash))
-        .map(b => b.toString(16).padStart(2, '0'))
-        .join('');
-}
 
 // Content storage
 let portfolioContent = {
@@ -154,17 +155,20 @@ function closeAdmin() {
 }
 
 // Check password
-async function checkPassword() {
+function checkPassword() {
     const enteredPassword = document.getElementById('adminPassword').value.trim();
-    const enteredHash = await hashPassword(enteredPassword);
+    const actualPassword = getAdminPassword();
     
-    if (enteredHash === ADMIN_PASSWORD_HASH) {
+    if (enteredPassword === actualPassword) {
         // Reset failed attempts on successful login
         failedAttempts = 0;
         lockoutTime = null;
         // Clear lockout data from localStorage
         localStorage.removeItem('adminLockout');
         localStorage.removeItem('adminAttempts');
+        
+        console.log('Admin login successful - password attempts reset');
+        console.log('Failed attempts reset to:', failedAttempts);
         
         // Force reload current content from page to capture any changes
         console.log('Admin login successful, reloading current content...');
