@@ -11,9 +11,63 @@
 	
 	  gtag('config', 'G-22W2Z0TSGE');
 	</script>
+    
+    <!-- SEO: 301 Redirect Script for www/non-www consistency -->
+    <script>
+        (function() {
+            var currentDomain = window.location.hostname;
+            var preferredDomain = 'ritulkulkarni.github.io'; // Change this to your preferred domain
+            
+            // Redirect www to non-www for consistency
+            if (currentDomain.startsWith('www.') && currentDomain !== 'www.' + preferredDomain) {
+                window.location.replace(window.location.protocol + '//' + currentDomain.substring(4) + window.location.pathname + window.location.search + window.location.hash);
+            }
+        })();
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ritul Kulkarni",
+        "jobTitle": "IT Student & Software Developer",
+        "description": "IT Student, Aspiring Software Developer & Tech Enthusiast",
+        "url": "https://ritulkulkarni.github.io/RitulPortfolio/",
+        "sameAs": [
+            "https://github.com/RitulK",
+            "https://linkedin.com/in/ritul-kulkarni"
+        ],
+        "knowsAbout": ["Web Development", "Python", "JavaScript", "Software Development", "Data Science"],
+        "alumniOf": {
+            "@type": "Organization",
+            "name": "University of Michigan"
+        }
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoPeFolio</title>
+    <meta name="description" content="Ritul Kulkarni - IT Student, Aspiring Software Developer & Tech Enthusiast. Explore my portfolio featuring web development projects, certifications from IBM and University of Michigan, and innovative tech solutions.">
+    <meta name="keywords" content="Ritul Kulkarni, Software Developer, Web Developer, IT Student, Portfolio, Python, JavaScript, React, Node.js, Tech Enthusiast">
+    <meta name="author" content="Ritul Kulkarni">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph tags for social media -->
+    <meta property="og:title" content="Ritul Kulkarni - IT Student & Software Developer Portfolio">
+    <meta property="og:description" content="IT Student, Aspiring Software Developer & Tech Enthusiast. Explore my portfolio featuring web development projects and certifications.">
+    <meta property="og:image" content="https://ritulkulkarni.github.io/RitulPortfolio/images/profilepic.jpg">
+    <meta property="og:url" content="https://ritulkulkarni.github.io/RitulPortfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ritul Kulkarni Portfolio">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ritul Kulkarni - IT Student & Software Developer Portfolio">
+    <meta name="twitter:description" content="IT Student, Aspiring Software Developer & Tech Enthusiast. Explore my portfolio featuring web development projects and certifications.">
+    <meta name="twitter:image" content="https://ritulkulkarni.github.io/RitulPortfolio/images/profilepic.jpg">
+    
+    <title>Ritul Kulkarni - IT Student & Software Developer Portfolio | DoPeFolio</title>
+    <link rel="canonical" href="https://ritulkulkarni.github.io/RitulPortfolio/">
     <link rel="shortcut icon" type="x-icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -198,12 +252,16 @@
         .leftsection {
             flex: 1;
             max-width: 600px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .hero-heading {
             font-size: clamp(2.5rem, 8vw, 6rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1rem;
-            position: relative;
-            z-index: 20;
+            color: var(--text-light);
         }
 
         .wordcolor {
@@ -1671,7 +1729,7 @@ section.about {
                 <img src="images/profilepic.jpg" alt="image">
             </div>
             <div class="leftsection">
-                Hello. I am <br>
+                <h1 class="hero-heading">Hello. I am Ritul Kulkarni</h1>
                 <!-- <div>Web Developer</div>  -->
                 <span id="element"></span>
                 <div class="github-button">
@@ -1736,7 +1794,7 @@ section.about {
         
        <!--===== ABOUT =====-->
 <section class="about section" id="about">
-    <h1 class="section-title">About</h1>
+    <h2 class="section-title">About</h2>
 
     <div class="about-container">
         <!-- Uncomment the following block to add an image -->
@@ -1993,7 +2051,7 @@ Scroll down to explore my projects, or contact me for collaboration opportunitie
             <h2 class="contact-me">Contact<span> Me</span></h2>
             <div class="container">
                 <form id="form" method="POST" action="/" >
-                    <h1>Message</h1>
+                    <h2>Message</h2>
                     <!-- <input type="hidden" name="access_key" value="10f2d652-06cc-4a78-af3f-afd7d8f88fde"> -->
 
                     <div class="input-control">
