@@ -2,5 +2,8 @@ package-lock.json
 node_modules/*
 .idea/*
 
+# Passcodes and sensitive configuration
+config.json
+
 images/*
 !images/.gitkeep

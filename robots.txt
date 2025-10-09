@@ -1,0 +1,4 @@
+User-agent: *
+Allow: https://ritulkulkarniportfolio.onrender.com/
+
+Sitemap: https://ritulkulkarniportfolio.onrender.com/sitemap.xml

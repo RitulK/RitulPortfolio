@@ -54,15 +54,22 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const fs = require('fs');
 
+// Load configuration file
+let config;
+try {
+    config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+} catch (error) {
+    console.error('Error loading config file:', error);
+    console.error('Please create config.json file with MongoDB URI');
+    process.exit(1);
+}
+
 // Middleware to parse request bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://ritulkulkarni:riyul6789@cluster0.i1bfetf.mongodb.net/website_form", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(config.mongodb.uri).then(() => {
     console.log('MongoDB is connected');
 }).catch(err => {
     console.error('MongoDB connection error:', err);
@@ -141,7 +148,7 @@ app.post("/", function(req, res) {
 });
 
 // Start the server
-app.listen(3000, function() {
-    console.log("Server is running on port 3000");
+app.listen(config.server.port, function() {
+    console.log(`Server is running on port ${config.server.port}`);
 });
 
