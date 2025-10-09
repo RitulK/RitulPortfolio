@@ -52,6 +52,7 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require('path');
+const fs = require('fs');
 
 // Middleware to parse request bodies
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -90,6 +91,30 @@ const Note = mongoose.model("Note", notesSchema);
 
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve sitemap.xml for SEO
+app.get('/sitemap.xml', function(req, res) {
+    const sitemapPath = path.join(__dirname, 'sitemap.xml');
+    
+    if (fs.existsSync(sitemapPath)) {
+        res.set('Content-Type', 'application/xml');
+        res.sendFile(sitemapPath);
+    } else {
+        // Generate a basic sitemap if file doesn't exist
+        const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yourdomain.com/</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>`;
+        
+        res.set('Content-Type', 'application/xml');
+        res.send(sitemap);
+    }
+});
 
 // Serve the index.html file at the root URL
 app.get("/", function(req, res) {
