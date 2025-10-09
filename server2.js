@@ -54,13 +54,31 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const fs = require('fs');
 
-// Load configuration file
-let config;
-try {
-    config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
-} catch (error) {
-    console.error('Error loading config file:', error);
-    console.error('Please create config.json file with MongoDB URI');
+// Load configuration - Support both environment variables and config file
+let config = {
+    mongodb: {
+        uri: process.env.MONGODB_URI || null
+    },
+    server: {
+        port: process.env.PORT || 3000
+    }
+};
+
+// Try to load config.json for local development
+if (!config.mongodb.uri) {
+    try {
+        const localConfig = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+        config = { ...config, ...localConfig };
+    } catch (error) {
+        console.error('No config.json found and no MONGODB_URI environment variable set');
+        console.error('For local development: Create config.json file');
+        console.error('For production: Set MONGODB_URI environment variable');
+        process.exit(1);
+    }
+}
+
+if (!config.mongodb.uri) {
+    console.error('MongoDB URI not found in config or environment variables');
     process.exit(1);
 }
 
