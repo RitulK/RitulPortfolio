@@ -269,13 +269,15 @@
         }
 
         #element {
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
             color: var(--text-light);
-            background: linear-gradient(45deg, var(--primary-color), #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: 'Poppins', sans-serif;
             position: relative;
             z-index: 25;
+            display: block;
+            margin-top: 0.5rem;
         }
 
         .github-button {
@@ -1392,155 +1394,6 @@ section.about {
             background-color: var(--bg-color) !important;
         }
 
-        /* ===== ADMIN PANEL STYLES ===== */
-        .admin-trigger {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 15px;
-            height: 15px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .admin-trigger:hover {
-            opacity: 0.3;
-        }
-
-        .admin-panel {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 10000;
-            overflow-y: auto;
-        }
-
-        .admin-content {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 2rem;
-            background: var(--bg-color);
-            border-radius: 15px;
-            border: 2px solid var(--primary-color);
-        }
-
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--primary-color);
-        }
-
-        .admin-close {
-            background: #ff4757;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .admin-section {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border: 1px solid #333;
-            border-radius: 10px;
-        }
-
-        .admin-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .admin-textarea {
-            width: 100%;
-            min-height: 150px;
-            background: #1a1a1a;
-            color: var(--text-light);
-            border: 1px solid #333;
-            border-radius: 5px;
-            padding: 1rem;
-            font-family: 'Poppins', sans-serif;
-            resize: vertical;
-        }
-
-        .admin-input {
-            width: 100%;
-            background: #1a1a1a;
-            color: var(--text-light);
-            border: 1px solid #333;
-            border-radius: 5px;
-            padding: 0.8rem;
-            font-family: 'Poppins', sans-serif;
-            margin-bottom: 0.5rem;
-        }
-
-        .admin-btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .admin-btn:hover {
-            background: #1e5bff;
-            transform: translateY(-2px);
-        }
-
-        .save-btn {
-            background: #2ed573;
-        }
-
-        .save-btn:hover {
-            background: #26c662;
-        }
-
-        .login-form {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .password-input {
-            margin: 1rem 0;
-            padding: 1rem;
-            width: 300px;
-            max-width: 90%;
-        }
-
-        /* Admin Panel Responsive */
-        @media screen and (max-width: 768px) {
-            .admin-content {
-                margin: 20px;
-                padding: 1rem;
-            }
-
-            .admin-section {
-                padding: 1rem;
-            }
-
-            .admin-section h3 {
-                font-size: 1.2rem;
-            }
-
-            .admin-section > div {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
         /* Remove conflicting backgroundAnim style - handled in bganimation.css */
 
         .input-control {
@@ -1611,6 +1464,39 @@ section.about {
             padding: 1rem;
             border-radius: var(--border-radius);
             display: none;
+            background-color: #2ed573;
+            color: white;
+            font-weight: 600;
+        }
+
+        #errorMessage {
+            text-align: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            display: none;
+            background-color: #ff4757;
+            color: white;
+            font-weight: 600;
+        }
+
+        .input-control.error input,
+        .input-control.error textarea {
+            border-color: #ff4757 !important;
+            background-color: rgba(255, 71, 87, 0.1);
+        }
+
+        .input-control.success input,
+        .input-control.success textarea {
+            border-color: #2ed573 !important;
+            background-color: rgba(46, 213, 115, 0.1);
+        }
+
+        .input-control .error {
+            color: #ff4757;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
         }
 
         /* Contact Form Responsive */
@@ -1729,8 +1615,9 @@ section.about {
                 <img src="images/profilepic.jpg" alt="image">
             </div>
             <div class="leftsection">
-                <h1 class="hero-heading">Hello. I am Ritul Kulkarni</h1>
+                <h1 class="hero-heading">Hello. I am</h1>
                 <!-- <div>Web Developer</div>  -->
+                <br>
                 <span id="element"></span>
                 <div class="github-button">
                     <button class="btn" onclick="openLinkInNeTab()">Visit Github</button>
@@ -2050,28 +1937,29 @@ Scroll down to explore my projects, or contact me for collaboration opportunitie
         <section class="contact-form" id="Contactme">
             <h2 class="contact-me">Contact<span> Me</span></h2>
             <div class="container">
-                <form id="form" method="POST" action="/" >
+                <form id="contactForm" method="POST" action="/" >
                     <h2>Message</h2>
                     <!-- <input type="hidden" name="access_key" value="10f2d652-06cc-4a78-af3f-afd7d8f88fde"> -->
 
                     <div class="input-control">
                         <label for="username">Username</label>
-                        <input id="username" name="username" type="text" placeholder="Enter your name">
+                        <input id="username" name="username" type="text" placeholder="Enter your name" required>
                         <div class="error"></div>
                     </div>
                     <div class="input-control">
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="text" placeholder="Email address">
+                        <input id="email" name="email" type="email" placeholder="Email address" required>
                         <div class="error"></div>
                     </div>
                     <div class="input-control">
                         <label for="messageme">Message</label>
-                        <input id="messageme" name="message" type="text" placeholder="Enter your message">
+                        <textarea id="messageme" name="message" placeholder="Enter your message" rows="5" required></textarea>
                         <div class="error"></div>
                     </div>
                     <button type="submit" name="submit">Submit</button>
 
                     <div id="successMessage"></div>
+                    <div id="errorMessage"></div>
 
                 </form>
             </div>
@@ -2106,86 +1994,162 @@ Scroll down to explore my projects, or contact me for collaboration opportunitie
         </footer>
     </main>
 
-    <!-- Hidden Admin Trigger -->
-    <button class="admin-trigger" onclick="showAdminLogin()"></button>
-
-    <!-- Admin Panel -->
-    <div class="admin-panel" id="adminPanel">
-        <div class="admin-content">
-            <div class="admin-header">
-                <h2 style="color: var(--primary-color);">Portfolio Admin Panel</h2>
-                <button class="admin-close" onclick="closeAdmin()">Close</button>
-            </div>
-
-            <!-- Login Form -->
-            <div id="loginForm" class="login-form">
-                <h3>Admin Access</h3>
-                <input type="password" id="adminPassword" class="password-input admin-input" placeholder="Enter admin password">
-                <br>
-                <button class="admin-btn" onclick="checkPassword()">Login</button>
-            </div>
-
-            <!-- Admin Edit Form -->
-            <div id="adminEditForm" style="display: none;">
-                
-                <!-- About Section Editor -->
-                <div class="admin-section">
-                    <h3>About Section</h3>
-                    <label>About Text:</label>
-                    <textarea class="admin-textarea" id="aboutText"></textarea>
-                </div>
-
-                <!-- Skills Section Editor -->
-                <div class="admin-section">
-                    <h3>Skills Section</h3>
-                    <div id="allSkills"></div>
-                    <button class="admin-btn" onclick="addSkill('unified')">Add Skill</button>
-                </div>
-
-                <!-- Achievements Section Editor -->
-                <div class="admin-section">
-                    <h3>Achievements Section</h3>
-                    <div id="achievementsList"></div>
-                    <button class="admin-btn" onclick="addAchievement()">Add Achievement</button>
-                </div>
-
-                <!-- Projects Section Editor -->
-                <div class="admin-section">
-                    <h3>Projects Section</h3>
-                    <div id="projectsList"></div>
-                    <button class="admin-btn" onclick="addProject()">Add Project</button>
-                </div>
-
-                <!-- Backup & Restore Section -->
-                <div class="admin-section">
-                    <h3>Backup & Data Management</h3>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                        <button class="admin-btn" onclick="exportPortfolioData()" style="background: #3742fa;">Export Backup</button>
-                        <button class="admin-btn" onclick="showStorageInfo()" style="background: #2f3542;">Show Storage Info</button>
-                        <button class="admin-btn" onclick="clearStoredData()" style="background: #ff4757;">Reset to Original</button>
-                    </div>
-                    <p style="font-size: 0.8rem; color: #888; margin-top: 10px; text-align: center;">
-                        Export creates a backup file. Reset clears all customizations and reloads original content.
-                    </p>
-                </div>
-
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button class="admin-btn save-btn" onclick="saveAllChanges()">Save All Changes (Permanent)</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
           strings: ['Ritul Kulkarni'],
-          typeSpeed: 50
+          typeSpeed: 200
         });
       </script>
       <script src="bganimation.js"></script>
       <script src="index.js"></script>
-      <script src="admin.js"></script>
+      
+      <!-- Contact Form Validation Script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const username = document.getElementById('username');
+            const email = document.getElementById('email');
+            const message = document.getElementById('messageme');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Form validation functions
+            const setError = (element, message) => {
+                const inputControl = element.parentElement;
+                const errorDisplay = inputControl.querySelector('.error');
+                
+                errorDisplay.innerText = message;
+                inputControl.classList.add('error');
+                inputControl.classList.remove('success');
+            };
+
+            const setSuccess = (element) => {
+                const inputControl = element.parentElement;
+                const errorDisplay = inputControl.querySelector('.error');
+                
+                errorDisplay.innerText = '';
+                inputControl.classList.add('success');
+                inputControl.classList.remove('error');
+            };
+
+            const isValidEmail = (email) => {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            };
+
+            const showMessage = (element, message, type = 'success') => {
+                element.style.display = 'block';
+                element.innerText = message;
+                
+                setTimeout(() => {
+                    element.style.display = 'none';
+                }, 5000);
+            };
+
+            const validateInputs = () => {
+                const usernameValue = username.value.trim();
+                const emailValue = email.value.trim();
+                const messageValue = message.value.trim();
+                let isValid = true;
+
+                // Username validation
+                if (usernameValue === '') {
+                    setError(username, 'Name is required');
+                    isValid = false;
+                } else if (usernameValue.length < 2) {
+                    setError(username, 'Name must be at least 2 characters');
+                    isValid = false;
+                } else {
+                    setSuccess(username);
+                }
+
+                // Email validation
+                if (emailValue === '') {
+                    setError(email, 'Email is required');
+                    isValid = false;
+                } else if (!isValidEmail(emailValue)) {
+                    setError(email, 'Please provide a valid email address');
+                    isValid = false;
+                } else {
+                    setSuccess(email);
+                }
+
+                // Message validation
+                if (messageValue === '') {
+                    setError(message, 'Message is required');
+                    isValid = false;
+                } else if (messageValue.length < 10) {
+                    setError(message, 'Message must be at least 10 characters');
+                    isValid = false;
+                } else {
+                    setSuccess(message);
+                }
+
+                return isValid;
+            };
+
+            // Form submission handler
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Hide previous messages
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+
+                // Validate form
+                if (!validateInputs()) {
+                    showMessage(errorMessage, 'Please fix the errors above', 'error');
+                    return;
+                }
+
+                // Submit form data
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch('/', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        showMessage(successMessage, 'Thank you for your message! I\'ll get back to you soon.', 'success');
+                        form.reset();
+                        
+                        // Clear all validation states
+                        document.querySelectorAll('.input-control').forEach(control => {
+                            control.classList.remove('error', 'success');
+                            control.querySelector('.error').innerText = '';
+                        });
+                    } else {
+                        throw new Error('Server responded with an error');
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    showMessage(errorMessage, 'Something went wrong. Please try again later.', 'error');
+                }
+            });
+
+            // Real-time validation
+            username.addEventListener('blur', () => {
+                if (username.value.trim() !== '') {
+                    validateInputs();
+                }
+            });
+
+            email.addEventListener('blur', () => {
+                if (email.value.trim() !== '') {
+                    validateInputs();
+                }
+            });
+
+            message.addEventListener('blur', () => {
+                if (message.value.trim() !== '') {
+                    validateInputs();
+                }
+            });
+        });
+      </script>
+      
       <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
